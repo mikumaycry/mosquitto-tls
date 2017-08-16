@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get install --no-install-recommends libwrap0-dev libssl-dev libc-ares-dev uuid-dev libwebsockets-dev -y
+RUN apt-get update && apt-get install --no-install-recommends libwrap0-dev libssl-dev libc-ares-dev uuid-dev libwebsockets-dev -y
 RUN mkdir -p /etc/mosquitto
 RUN adduser --system --disabled-password --disabled-login mosquitto
 USER mosquitto
